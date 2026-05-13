@@ -5,7 +5,7 @@ const profile = {
   role: "Backend Developer Jr.",
   location: "Buenos Aires, Argentina",
   email: "nachogodoy04@gmail.com",
-  linkedin: "https://linkedin.com/in/ignaciogodoy",
+  linkedin: "https://www.linkedin.com/in/ignacio-gabriel-godoy-351770273/?skipRedirect=true://linkedin.com/in/ignaciogodoy",
   github: "https://github.com/IgnacioGodoy2002",
   cv: "/CV_Ignacio_Godoy.pdf",
 };
