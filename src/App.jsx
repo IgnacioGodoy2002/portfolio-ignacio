@@ -87,6 +87,24 @@ const projects = [
     role: "Diseño, desarrollo y testing.",
     repo: "https://github.com/IgnacioGodoy2002/sistema-encuestas-centros-salud",
   },
+  {
+  title: "LibroClick - Documentación Funcional de E-commerce",
+  description:
+    "Proyecto académico de análisis funcional para una librería online. Incluye documentación BRD y FRD, historias de usuario, reglas de negocio, diagramas UML, prototipo de pantallas y casos de prueba.",
+  tech: [
+    "BRD",
+    "FRD",
+    "UML",
+    "Draw.io",
+    "Testing",
+    "Historias de Usuario",
+    "Prototipado"
+  ],
+  role:
+    "Proyecto académico grupal. Participé en el análisis de requerimientos, documentación funcional, armado de historias de usuario, diagramas, prototipo y casos de prueba.",
+  repo: "https://github.com/IgnacioGodoy2002/libroclick-documentacion-funcional",
+  buttonText: "Ver documentación",
+},
 
 ];
 
@@ -228,16 +246,16 @@ function App() {
     </a>
   )}
 
-  {project.repo && (
-    <a
-      href={project.repo}
-      target="_blank"
-      rel="noreferrer"
-      className="inline-flex items-center gap-2 font-semibold hover:text-blue-700"
-    >
-      Frontend / Código <ExternalLink size={16} />
-    </a>
-  )}
+ {project.repo && (
+  <a
+    href={project.repo}
+    target="_blank"
+    rel="noreferrer"
+    className="inline-flex items-center gap-2 font-semibold hover:text-blue-700"
+  >
+    {project.buttonText || "Ver código"} <ExternalLink size={16} />
+  </a>
+)}
 
   {project.backend && (
     <a
