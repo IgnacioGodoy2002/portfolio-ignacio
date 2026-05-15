@@ -29,6 +29,37 @@ const skills = [
 ];
 
 const projects = [
+{
+  title: "Frozen Lácteos - Sistema de Gestión de Producción",
+  description:
+    "Sistema full stack para una PyME alimenticia orientado a la gestión de insumos, productos, registros de ingresos y egresos, órdenes de producción, reportes, trazabilidad y usuarios con roles. Demo online no disponible actualmente; el funcionamiento está documentado en video, guía de usuario y repositorios.",
+  tech: [
+    "React",
+    "TypeScript",
+    "Java API REST",
+    "React Router",
+    "Material UI",
+    "Context API",
+    "Recharts",
+    "CSS",
+    "Scrum"
+  ],
+  role:
+    "Scrum Master. Creé historias de usuario, participé en la planificación de sprints, realicé seguimiento del avance del equipo, armé indicadores del proyecto y acompañé la comunicación entre frontend, backend y testing.",
+  repo: "https://github.com/kevin-rodriguez98/TP-Principal-frontend",
+  backend: "https://github.com/kevin-rodriguez98/tp-principal-backend",
+  video: "/demo-frozen-lacteos.mp4",
+  manual: "/guia-frozen-lacteos.pdf",
+},
+{
+  title: "Sistema de Reconocimiento Facial",
+  description:
+    "Prototipo de control de asistencia para una PyME alimenticia. Utiliza OpenCV para detección y validación de rostros mediante el algoritmo LBPH.",
+  tech: ["Python", "OpenCV", "LBPH", "NumPy", "Ngrok"],
+  role:
+    "Proyecto grupal. Participé en el desarrollo general, pruebas y validación del funcionamiento del sistema.",
+  repo: "https://github.com/kevin-rodriguez98/TP-inicial-reconocimiento-facial",
+},
   {
     title: "E-commerce Universitario",
     description:
@@ -85,7 +116,7 @@ function App() {
               </p>
 
               <p className="mt-6 text-lg leading-8 text-slate-600">
-                Estudiante avanzado de Tecnicatura Universitaria en Informática y estudiante de Licenciatura en Sistemas..
+                Estudiante avanzado de Tecnicatura Universitaria en Informática y estudiante de Licenciatura en Sistemas.
                 Me interesa crecer como Backend Developer Jr., participando en proyectos reales y fortaleciendo
                 mis conocimientos en APIs, bases de datos y desarrollo de software.
               </p>
@@ -126,7 +157,7 @@ function App() {
                 </p>
                 <p className="flex items-center gap-3">
                   <GraduationCap size={18} className="text-blue-400" />
-                  Tecnicatura en etapa final: 1 final pendiente
+                  Tecnicatura Univ. en Informática: 1 final pendiente
                 </p>
                 <p className="flex items-center gap-3">
                   <Database size={18} className="text-blue-400" />
@@ -170,13 +201,51 @@ function App() {
                 ))}
               </div>
 
-              <a
-                href={project.repo}
-                target="_blank"
-                className="inline-flex items-center gap-2 mt-6 font-semibold hover:text-blue-700"
-              >
-                Ver código <ExternalLink size={16} />
-              </a>
+              <div className="flex flex-wrap gap-3 mt-6">
+  {project.video && (
+    <a
+      href={project.video}
+      target="_blank"
+      rel="noreferrer"
+      className="inline-flex items-center gap-2 font-semibold hover:text-blue-700"
+    >
+      Video demo <ExternalLink size={16} />
+    </a>
+  )}
+
+  {project.manual && (
+    <a
+      href={project.manual}
+      target="_blank"
+      rel="noreferrer"
+      className="inline-flex items-center gap-2 font-semibold hover:text-blue-700"
+    >
+      Guía de usuario <ExternalLink size={16} />
+    </a>
+  )}
+
+  {project.repo && (
+    <a
+      href={project.repo}
+      target="_blank"
+      rel="noreferrer"
+      className="inline-flex items-center gap-2 font-semibold hover:text-blue-700"
+    >
+      Frontend / Código <ExternalLink size={16} />
+    </a>
+  )}
+
+  {project.backend && (
+    <a
+      href={project.backend}
+      target="_blank"
+      rel="noreferrer"
+      className="inline-flex items-center gap-2 font-semibold hover:text-blue-700"
+    >
+      Backend <ExternalLink size={16} />
+    </a>
+  )}
+</div>
             </article>
           ))}
         </div>
