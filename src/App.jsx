@@ -60,14 +60,7 @@ const projects = [
     "Proyecto grupal. Participé en el desarrollo general, pruebas y validación del funcionamiento del sistema.",
   repo: "https://github.com/kevin-rodriguez98/TP-inicial-reconocimiento-facial",
 },
-  {
-    title: "E-commerce Universitario",
-    description:
-      "Aplicación para gestión de librería online con usuarios, pedidos, pagos y notificaciones.",
-    tech: ["Java", "PostgreSQL", "Swing", "GitHub"],
-    role: "Desarrollo backend y base de datos.",
-    repo: "https://github.com/IgnacioGodoy2002",
-  },
+  
   {
     title: "Sistema de Encuestas para Centros de Salud",
     description:
@@ -76,14 +69,7 @@ const projects = [
     role: "Diseño, desarrollo y testing.",
     repo: "https://github.com/IgnacioGodoy2002/sistema-encuestas-centros-salud",
   },
-  {
-    title: "Gestión de Pedidos",
-    description:
-      "Sistema para administración de stock, gestión de pedidos y notificaciones por correo.",
-    tech: ["Go", "BoltDB", "HTML básico"],
-    role: "Full Stack académico.",
-    repo: "https://github.com/IgnacioGodoy2002",
-  },
+
 ];
 
 function App() {
