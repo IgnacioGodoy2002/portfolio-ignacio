@@ -52,6 +52,24 @@ const projects = [
   manual: "/guia-frozen-lacteos.pdf",
 },
 {
+  title: "Sistema de Gestión de Pedidos y Stock",
+  description:
+    "Sistema backend desarrollado para administrar clientes, productos, pedidos, cancelaciones, entregas y control de stock disponible y reservado. Incluye lógica de base de datos con PostgreSQL, stored procedures, triggers, solicitudes de reposición y módulo NoSQL con BoltDB.",
+  tech: [
+    "Go",
+    "PostgreSQL",
+    "SQL",
+    "Stored Procedures",
+    "Triggers",
+    "BoltDB",
+    "Git",
+    "Linux"
+  ],
+  role:
+    "Proyecto académico grupal. Participé en el desarrollo del sistema, implementación de consultas SQL, organización del proyecto, pruebas y resolución de errores relacionados con claves primarias, claves foráneas y lógica de pedidos.",
+  repo: "https://github.com/IgnacioGodoy2002/sistema-gestion-pedidos-stock",
+},
+{
   title: "Sistema de Reconocimiento Facial",
   description:
     "Prototipo de control de asistencia para una PyME alimenticia. Utiliza OpenCV para detección y validación de rostros mediante el algoritmo LBPH.",
