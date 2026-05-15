@@ -74,7 +74,7 @@ const projects = [
       "Aplicación para evaluar satisfacción de pacientes y analizar datos relevados.",
     tech: ["Python", "SQLite", "Pandas", "OpenCV"],
     role: "Diseño, desarrollo y testing.",
-    repo: "https://github.com/IgnacioGodoy2002",
+    repo: "https://github.com/IgnacioGodoy2002/sistema-encuestas-centros-salud",
   },
   {
     title: "Gestión de Pedidos",
