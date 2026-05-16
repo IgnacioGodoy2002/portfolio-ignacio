@@ -29,6 +29,28 @@ const skills = [
 ];
 
 const projects = [
+  {
+  title: "BarberFlow API - Sistema Inteligente de Turnos para Barbería",
+  description:
+    "API REST desarrollada para gestionar turnos de barbería de forma profesional. Incluye autenticación JWT, roles, servicios, barberos, horarios laborales, disponibilidad dinámica, reservas, cancelaciones, bloqueos de agenda, validación de conflictos y deploy online.",
+  tech: [
+    "NestJS",
+    "TypeScript",
+    "PostgreSQL",
+    "Prisma",
+    "JWT",
+    "Swagger",
+    "Render",
+    "Neon",
+    "bcrypt",
+    "RBAC"
+  ],
+  role:
+    "Proyecto personal. Diseñé y desarrollé el backend completo conectando mi experiencia real como barbero con mi formación en desarrollo backend. Implementé autenticación, roles, base de datos relacional, motor de disponibilidad, reservas, cancelaciones, bloqueos de agenda y documentación Swagger.",
+  repo: "https://github.com/IgnacioGodoy2002/barberflow-api",
+  backend: "https://barberflow-api-9feo.onrender.com/api/docs",
+  buttonText: "Ver código",
+},
 {
   title: "Frozen Lácteos - Sistema de Gestión de Producción",
   description:
