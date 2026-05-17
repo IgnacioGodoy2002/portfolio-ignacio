@@ -5,7 +5,7 @@ const profile = {
   role: "Backend Developer Jr.",
   location: "Buenos Aires, Argentina",
   email: "nachogodoy04@gmail.com",
-  linkedin: "https://www.linkedin.com/in/ignacio-gabriel-godoy-351770273/?skipRedirect=true://linkedin.com/in/ignaciogodoy",
+  linkedin: "https://www.linkedin.com/in/ignacio-gabriel-godoy-351770273/",
   github: "https://github.com/IgnacioGodoy2002",
   cv: "/CV_Ignacio_Godoy.pdf",
 };
@@ -24,32 +24,43 @@ const skills = [
   "GitHub",
   "Linux",
   "APIs REST",
+  "NestJS",
+  "Prisma",
+  "React",
+  "TypeScript",
+  "Vite",
+  "Tailwind CSS",
+  "Render",
+  "Vercel",
   "Pandas",
   "OpenCV",
 ];
 
 const projects = [
   {
-  title: "BarberFlow API - Sistema Inteligente de Turnos para Barbería",
+  title: "BarberFlow - Sistema Fullstack de Turnos para Barbería",
   description:
-    "API REST desarrollada para gestionar turnos de barbería de forma profesional. Incluye autenticación JWT, roles, servicios, barberos, horarios laborales, disponibilidad dinámica, reservas, cancelaciones, bloqueos de agenda, validación de conflictos y deploy online.",
+    "Aplicación fullstack desarrollada para gestionar turnos de barbería de forma profesional. Incluye frontend en React, backend en NestJS, autenticación JWT, roles, servicios, barberos, horarios laborales, disponibilidad dinámica, reservas, cancelaciones y documentación Swagger.",
   tech: [
-    "NestJS",
+    "React",
     "TypeScript",
+    "Vite",
+    "Tailwind CSS",
+    "NestJS",
     "PostgreSQL",
     "Prisma",
     "JWT",
     "Swagger",
     "Render",
+    "Vercel",
     "Neon",
-    "bcrypt",
-    "RBAC"
   ],
   role:
-    "Proyecto personal. Diseñé y desarrollé el backend completo conectando mi experiencia real como barbero con mi formación en desarrollo backend. Implementé autenticación, roles, base de datos relacional, motor de disponibilidad, reservas, cancelaciones, bloqueos de agenda y documentación Swagger.",
-  repo: "https://github.com/IgnacioGodoy2002/barberflow-api",
-  backend: "https://barberflow-api-9feo.onrender.com/api/docs",
-  buttonText: "Ver código",
+    "Proyecto personal. Diseñé y desarrollé una solución fullstack conectando mi experiencia real como barbero con mi formación en desarrollo. Implementé frontend, backend, base de datos relacional, autenticación, reservas, disponibilidad en tiempo real, validación de conflictos y deploy completo.",
+  demo: "https://barberflow-a0u8cix0l-ignaciogodoy2002s-projects.vercel.app/",
+  frontend: "https://github.com/IgnacioGodoy2002/barberflow-web",
+  backend: "https://github.com/IgnacioGodoy2002/barberflow-api",
+  swagger: "https://barberflow-api-9feo.onrender.com/api/docs",
 },
 {
   title: "Frozen Lácteos - Sistema de Gestión de Producción",
@@ -246,50 +257,83 @@ function App() {
               </div>
 
               <div className="flex flex-wrap gap-3 mt-6">
-  {project.video && (
-    <a
-      href={project.video}
-      target="_blank"
-      rel="noreferrer"
-      className="inline-flex items-center gap-2 font-semibold hover:text-blue-700"
-    >
-      Video demo <ExternalLink size={16} />
-    </a>
-  )}
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2 font-semibold text-white hover:bg-blue-700 transition"
+                  >
+                    Ver demo <ExternalLink size={16} />
+                  </a>
+                )}
 
-  {project.manual && (
-    <a
-      href={project.manual}
-      target="_blank"
-      rel="noreferrer"
-      className="inline-flex items-center gap-2 font-semibold hover:text-blue-700"
-    >
-      Guía de usuario <ExternalLink size={16} />
-    </a>
-  )}
+                {project.frontend && (
+                  <a
+                    href={project.frontend}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-4 py-2 font-semibold hover:text-blue-700 transition"
+                  >
+                    Código frontend <ExternalLink size={16} />
+                  </a>
+                )}
 
- {project.repo && (
-  <a
-    href={project.repo}
-    target="_blank"
-    rel="noreferrer"
-    className="inline-flex items-center gap-2 font-semibold hover:text-blue-700"
-  >
-    {project.buttonText || "Ver código"} <ExternalLink size={16} />
-  </a>
-)}
+                {project.repo && (
+                  <a
+                    href={project.repo}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-4 py-2 font-semibold hover:text-blue-700 transition"
+                  >
+                    {project.buttonText || "Ver código"} <ExternalLink size={16} />
+                  </a>
+                )}
 
-  {project.backend && (
-    <a
-      href={project.backend}
-      target="_blank"
-      rel="noreferrer"
-      className="inline-flex items-center gap-2 font-semibold hover:text-blue-700"
-    >
-      Backend <ExternalLink size={16} />
-    </a>
-  )}
-</div>
+                {project.backend && (
+                  <a
+                    href={project.backend}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-4 py-2 font-semibold hover:text-blue-700 transition"
+                  >
+                    Código backend <ExternalLink size={16} />
+                  </a>
+                )}
+
+                {project.swagger && (
+                  <a
+                    href={project.swagger}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-xl border border-blue-200 bg-blue-50 px-4 py-2 font-semibold text-blue-700 hover:bg-blue-100 transition"
+                  >
+                    Swagger API <ExternalLink size={16} />
+                  </a>
+                )}
+
+                {project.video && (
+                  <a
+                    href={project.video}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-4 py-2 font-semibold hover:text-blue-700 transition"
+                  >
+                    Video demo <ExternalLink size={16} />
+                  </a>
+                )}
+
+                {project.manual && (
+                  <a
+                    href={project.manual}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-4 py-2 font-semibold hover:text-blue-700 transition"
+                  >
+                    Guía de usuario <ExternalLink size={16} />
+                  </a>
+                )}
+              </div>
             </article>
           ))}
         </div>
@@ -320,14 +364,15 @@ function App() {
       <section className="max-w-6xl mx-auto px-6 py-16">
         <div className="bg-slate-950 text-white rounded-3xl p-8 md:p-12">
           <p className="text-blue-400 font-bold uppercase tracking-widest text-sm">
-            Próximo objetivo
+            Proyecto fullstack destacado
           </p>
           <h2 className="text-3xl font-black mt-2">
-            Proyecto real recomendado
+            BarberFlow ya está online
           </h2>
           <p className="mt-5 text-slate-300 leading-8 max-w-3xl">
-            Mi próximo objetivo es desarrollar una API de turnos para barbería, integrando autenticación, clientes, servicios, horarios disponibles, reservas, cancelaciones, base de datos y deploy. 
-            Este proyecto conecta mi experiencia real como barbero con mi formación en desarrollo backend.
+            Desarrollé BarberFlow como un sistema real de turnos para barbería, con frontend en React, backend en NestJS,
+            base de datos PostgreSQL, autenticación JWT, disponibilidad dinámica, reservas, cancelaciones, Swagger y deploy
+            completo en Vercel, Render y Neon.
           </p>
         </div>
       </section>
