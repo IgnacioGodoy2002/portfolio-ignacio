@@ -40,7 +40,7 @@ const projects = [
   {
   title: "BarberFlow - Sistema Fullstack de Turnos para Barbería",
   description:
-    "Aplicación fullstack desarrollada para gestionar turnos de barbería de forma profesional. Incluye frontend en React, backend en NestJS, autenticación JWT, roles, servicios, barberos, horarios laborales, disponibilidad dinámica, reservas, cancelaciones y documentación Swagger.",
+    "Aplicación fullstack desarrollada para gestionar turnos de barbería de forma profesional. Permite consultar servicios, ver barberos, revisar disponibilidad en tiempo real, registrar clientes, iniciar sesión, reservar turnos, consultar reservas propias, cancelar turnos y acceder a un panel interno de administración.",
   tech: [
     "React",
     "TypeScript",
@@ -56,12 +56,13 @@ const projects = [
     "Neon",
   ],
   role:
-    "Proyecto personal. Diseñé y desarrollé una solución fullstack conectando mi experiencia real como barbero con mi formación en desarrollo. Implementé frontend, backend, base de datos relacional, autenticación, reservas, disponibilidad en tiempo real, validación de conflictos y deploy completo.",
+    "Proyecto personal. Diseñé y desarrollé una solución fullstack conectando mi experiencia real como barbero con mi formación en desarrollo. Implementé frontend, backend, base de datos relacional, autenticación JWT, roles, disponibilidad dinámica, reservas online, comprobante de turno, sección de mis turnos, cancelaciones, panel interno, contacto por WhatsApp y deploy completo.",
   demo: "https://barberflow-a0u8cix0l-ignaciogodoy2002s-projects.vercel.app/",
   frontend: "https://github.com/IgnacioGodoy2002/barberflow-web",
   backend: "https://github.com/IgnacioGodoy2002/barberflow-api",
   swagger: "https://barberflow-api-9feo.onrender.com/api/docs",
 },
+
 {
   title: "Frozen Lácteos - Sistema de Gestión de Producción",
   description:
