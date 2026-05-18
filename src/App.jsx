@@ -57,7 +57,7 @@ const projects = [
   ],
   role:
     "Proyecto personal. Diseñé y desarrollé una solución fullstack conectando mi experiencia real como barbero con mi formación en desarrollo. Implementé frontend, backend, base de datos relacional, autenticación JWT, roles, disponibilidad dinámica, reservas online, comprobante de turno, sección de mis turnos, cancelaciones, panel interno, contacto por WhatsApp y deploy completo.",
-  demo: "https://barberflow-a0u8cix0l-ignaciogodoy2002s-projects.vercel.app/",
+  demo: "https://barberflow-web-six.vercel.app/",
   frontend: "https://github.com/IgnacioGodoy2002/barberflow-web",
   backend: "https://github.com/IgnacioGodoy2002/barberflow-api",
   swagger: "https://barberflow-api-9feo.onrender.com/api/docs",
