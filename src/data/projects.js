@@ -101,6 +101,37 @@ export const projects = [
   },
 ];
 
-// Juegos desarrollados en SURA. Se completa con el relevamiento técnico
-// del repositorio de juegos (ver prompt de extracción compartido).
-export const games = [];
+// Juegos desarrollados en SURA Gaming.
+export const games = [
+  {
+    title: "Pengu Rush",
+    description:
+      "Arcade espacial: pilotás una nave con temática pingüino esquivando y destruyendo meteoritos de tres tamaños, con escudo temporal, dificultad progresiva y puntaje por sobrevivir y destruir. Juego completo, jugable en escritorio y móvil, con soporte multitouch real.",
+    tech: [
+      "TypeScript",
+      "Phaser 4",
+      "Vite",
+      "Playwright",
+      "localStorage",
+      "i18n",
+    ],
+    role:
+      "Proyecto individual (20 commits propios, sin coautoría). Diseñé la arquitectura por escenas de Phaser, el balance de armas/meteoritos/dificultad progresiva, un validador anti-cheat de \"puntaje máximo plausible\" que corre en Node replicando las constantes de balance del cliente para invalidar sesiones imposibles sin replay server-side, managers propios de música y efectos de sonido, soporte multitouch, tutorial integrado, i18n (es/en/pt), tests end-to-end con Playwright y la integración vía postMessage con la plataforma SURA Gaming (embebido en iframe web o WebView nativo).",
+    demo: "https://pengu-rush.vercel.app",
+    repo: "https://github.com/IgnacioGodoy2002/pengu-rush",
+  },
+  {
+    title: "Safari Crossing",
+    description:
+      "Reescritura y expansión con temática safari de un clon de Crossy Road: cruzás carriles esquivando autos, camiones y trenes, cruzás ríos y coleccionás monedas. Integrado con SURA Gaming (cada 100 metros otorga SURA Points).",
+    tech: [
+      "TypeScript",
+      "Three.js",
+      "Vite",
+      "localStorage",
+      "i18n",
+    ],
+    role:
+      "Reescritura y expansión propia sobre una base de terceros: el clon original en JavaScript vanilla (dannz510/Crossy_road) quedó como código muerto, y reescribí el juego completo en TypeScript sobre Three.js puro (sin motor de juego adicional) con arquitectura orientada a objetos: movimiento en grilla con detección de colisión propia, generación procedural infinita de carriles, vehículos con texturas generadas por canvas, cámara ortográfica con offset manual para la perspectiva isométrica, personaje animado con primitivas propias, sistema de monedas y puntaje, i18n (es/en/pt) y la misma integración con SURA Gaming que en Pengu Rush. Sin deploy público todavía.",
+  },
+];
