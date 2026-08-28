@@ -1,4 +1,4 @@
-import { ExternalLink, Scissors } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { GridBeam } from "@/components/ui/grid-beam";
 import { BrowserWindow } from "@/components/ui/mock-browser-window";
 import { TextureButton } from "@/components/ui/texture-button";
@@ -48,11 +48,14 @@ export function FeaturedSection() {
             url="barberflow-web-six.vercel.app"
             className="w-full max-w-full mx-auto"
           >
-            <div className="h-full w-full flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-blue-950 via-neutral-900 to-neutral-950 text-center px-6">
-              <Scissors className="text-blue-400" size={32} />
-              <p className="font-semibold text-white">BarberFlow</p>
-              <p className="text-xs text-neutral-400">Turnos, disponibilidad y panel de administración en tiempo real</p>
-            </div>
+            {barberFlow?.image && (
+              <img
+                src={barberFlow.image}
+                alt="Captura de la demo en vivo de BarberFlow"
+                className="h-full w-full object-cover object-top"
+                loading="lazy"
+              />
+            )}
           </BrowserWindow>
         </div>
       </GridBeam>

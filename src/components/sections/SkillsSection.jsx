@@ -8,7 +8,7 @@ export function SkillsSection() {
         <p className="text-blue-400 font-bold uppercase tracking-widest text-sm">
           Skills
         </p>
-        <GradientHeading size="lg" className="mt-2 mb-10">
+        <GradientHeading as="h2" size="lg" className="mt-2 mb-10">
           Tecnologías y herramientas
         </GradientHeading>
 

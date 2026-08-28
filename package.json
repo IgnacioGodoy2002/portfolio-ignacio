@@ -1,7 +1,14 @@
 {
   "name": "portfolio-ignacio",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "description": "Portfolio personal de Ignacio Godoy, Backend Developer Jr.",
+  "author": "Ignacio Godoy",
+  "homepage": "https://portfolio-ignacio-pi.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IgnacioGodoy2002/portfolio-ignacio.git"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",

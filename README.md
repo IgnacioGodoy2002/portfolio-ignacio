@@ -1,16 +1,36 @@
-# React + Vite
+# Portfolio — Ignacio Godoy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfolio personal de Ignacio Godoy, Backend Developer Jr. Sitio de una sola página construido con React + Vite + Tailwind CSS, con componentes de [shadcn](https://ui.shadcn.com) y [Cult UI](https://cult-ui.com).
 
-Currently, two official plugins are available:
+Sitio en vivo: https://portfolio-ignacio-pi.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack
 
-## React Compiler
+- React 19 + Vite
+- Tailwind CSS 4
+- shadcn/ui + Cult UI (Radix, Framer Motion) para componentes visuales
+- lucide-react para íconos
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Desarrollo
 
-## Expanding the ESLint configuration
+```bash
+npm install
+npm run dev      # servidor de desarrollo
+npm run build    # build de producción
+npm run lint     # eslint
+npm run preview  # sirve el build de producción localmente
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Estructura
+
+```
+src/
+  App.jsx                  # composición de secciones
+  data/                    # contenido (perfil, skills, proyectos, juegos)
+  components/
+    sections/               # Hero, About, Projects, Skills, Featured, Contact
+    ProjectCard.jsx          # tarjeta reutilizada por proyectos y juegos
+    ui/                      # componentes de shadcn/Cult UI (no editar a mano salvo necesidad)
+```
+
+Los proyectos y juegos se listan en [src/data/projects.js](src/data/projects.js).

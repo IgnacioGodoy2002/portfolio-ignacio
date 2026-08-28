@@ -51,6 +51,7 @@ function DirectionAwareTabs({
   return (
     <div className=" flex flex-col items-center w-full">
       <div
+        role="tablist"
         className={cn(
           "flex space-x-1 border border-none rounded-full cursor-pointer bg-neutral-600 px-[3px] py-[3.2px] shadow-inner-shadow",
           className,
@@ -59,6 +60,10 @@ function DirectionAwareTabs({
         {tabs.map((tab) => (
           <button
             key={tab.id}
+            role="tab"
+            aria-selected={activeTab === tab.id}
+            aria-controls={`tabpanel-${tab.id}`}
+            id={`tab-${tab.id}`}
             onClick={() => handleTabClick(tab.id)}
             className={cn(
               "relative rounded-full px-3.5 py-1.5 text-xs sm:text-sm font-medium text-neutral-200  transition focus-visible:outline-1 focus-visible:ring-1  focus-visible:outline-none flex gap-2 items-center ",
@@ -94,6 +99,9 @@ function DirectionAwareTabs({
               onExitComplete={() => setIsAnimating(false)}>
               <motion.div
                 key={activeTab}
+                role="tabpanel"
+                id={`tabpanel-${activeTab}`}
+                aria-labelledby={`tab-${activeTab}`}
                 variants={variants}
                 initial="initial"
                 animate="active"

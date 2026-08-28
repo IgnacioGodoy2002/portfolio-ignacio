@@ -23,6 +23,7 @@ export const projects = [
     frontend: "https://github.com/IgnacioGodoy2002/barberflow-web",
     backend: "https://github.com/IgnacioGodoy2002/barberflow-api",
     swagger: "https://barberflow-api-9feo.onrender.com/api/docs",
+    image: "/screenshots/barberflow.jpg",
   },
   {
     title: "Frozen Lácteos - Sistema de Gestión de Producción",
@@ -45,6 +46,7 @@ export const projects = [
     backend: "https://github.com/kevin-rodriguez98/tp-principal-backend",
     video: "/demo-frozen-lacteos.mp4",
     manual: "/guia-frozen-lacteos.pdf",
+    image: "/screenshots/frozen-lacteos.jpg",
   },
   {
     title: "Sistema de Gestión de Pedidos y Stock",
@@ -119,6 +121,7 @@ export const games = [
       "Proyecto individual (20 commits propios, sin coautoría). Diseñé la arquitectura por escenas de Phaser, el balance de armas/meteoritos/dificultad progresiva, un validador anti-cheat de \"puntaje máximo plausible\" que corre en Node replicando las constantes de balance del cliente para invalidar sesiones imposibles sin replay server-side, managers propios de música y efectos de sonido, soporte multitouch, tutorial integrado, i18n (es/en/pt), tests end-to-end con Playwright y la integración vía postMessage con la plataforma SURA Gaming (embebido en iframe web o WebView nativo).",
     demo: "https://pengu-rush.vercel.app",
     repo: "https://github.com/IgnacioGodoy2002/pengu-rush",
+    image: "/screenshots/pengu-rush.jpg",
   },
   {
     title: "Safari Crossing",
@@ -166,5 +169,6 @@ export const games = [
       "Proyecto individual (21 commits, único autor). Implementé la detección de matches y bolas huérfanas por flood-fill sobre la grilla hexagonal, ajusté el collider físico de las bolas por debajo del radio visual para que los tiros ajustados se sintieran bien (y resolví el bug de bolas atravesando huecos internos que eso generó con un chequeo de proximidad adicional), separé el escalado por device-pixel-ratio del breakpoint real de CSS para no romper la detección mobile en pantallas de alto DPR, forcé a mano el resize del canvas cuando el navegador mobile colapsa la barra de direcciones (Phaser fija el aspect ratio una sola vez al iniciar), y armé el protocolo propio sobre postMessage con envelope versionado y máquina de estados para reportar sesión y puntaje a la plataforma host SURA.",
     demo: "https://joystick-pop.vercel.app",
     repo: "https://github.com/IgnacioGodoy2002/joystick-pop",
+    image: "/screenshots/joystick-pop.jpg",
   },
 ];
