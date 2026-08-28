@@ -1,3 +1,4 @@
+import { TextureOverlay } from "@/components/ui/texture-overlay";
 import { Hero } from "@/components/sections/Hero";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { SkillsSection } from "@/components/sections/SkillsSection";
@@ -7,13 +8,16 @@ import { ContactSection } from "@/components/sections/ContactSection";
 
 function App() {
   return (
-    <main className="min-h-screen bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100">
-      <Hero />
-      <ProjectsSection />
-      <SkillsSection />
-      <FeaturedSection />
-      <ExperienceSection />
-      <ContactSection />
+    <main className="relative min-h-screen bg-neutral-950 text-neutral-100">
+      <TextureOverlay texture="dots" opacity={0.05} className="invert" />
+      <div className="relative z-10">
+        <Hero />
+        <ProjectsSection />
+        <SkillsSection />
+        <FeaturedSection />
+        <ExperienceSection />
+        <ContactSection />
+      </div>
     </main>
   );
 }
