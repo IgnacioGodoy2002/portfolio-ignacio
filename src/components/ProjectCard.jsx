@@ -7,6 +7,7 @@ import {
   TextureCardFooter,
 } from "@/components/ui/texture-card";
 import { Button } from "@/components/ui/button";
+import { useTilt } from "@/hooks/useTilt";
 
 const LINK_FIELDS = [
   { key: "demo", label: "Ver demo", variant: "default" },
@@ -19,8 +20,10 @@ const LINK_FIELDS = [
 ];
 
 export function ProjectCard({ item }) {
+  const tiltRef = useTilt();
+
   return (
-    <TextureCard className="h-full flex flex-col overflow-hidden">
+    <TextureCard ref={tiltRef} className="h-full flex flex-col overflow-hidden [transition:transform_.5s_ease-out]">
       {item.image && (
         <img
           src={item.image}

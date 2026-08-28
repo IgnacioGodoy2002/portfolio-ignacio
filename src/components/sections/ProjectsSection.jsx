@@ -2,13 +2,16 @@ import { Gamepad2 } from "lucide-react";
 import { DirectionAwareTabs } from "@/components/ui/direction-aware-tabs";
 import { GradientHeading } from "@/components/ui/gradient-heading";
 import { ProjectCard } from "@/components/ProjectCard";
+import { Reveal } from "@/components/Reveal";
 import { projects, games } from "@/data/projects";
 
 function CardGrid({ items }) {
   return (
     <div className="grid md:grid-cols-3 gap-6">
-      {items.map((item) => (
-        <ProjectCard key={item.title} item={item} />
+      {items.map((item, index) => (
+        <Reveal key={item.title} delay={index * 80} className="h-full">
+          <ProjectCard item={item} />
+        </Reveal>
       ))}
     </div>
   );

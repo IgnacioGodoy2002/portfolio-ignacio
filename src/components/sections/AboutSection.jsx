@@ -1,5 +1,6 @@
 import { Briefcase, GraduationCap, Scissors } from "lucide-react";
 import { GradientHeading } from "@/components/ui/gradient-heading";
+import { Reveal } from "@/components/Reveal";
 import avatarFull from "@/assets/avatar-full.svg";
 
 const timeline = [
@@ -48,14 +49,14 @@ export function AboutSection() {
         />
 
         <ol className="space-y-6 border-l border-neutral-800 pl-6">
-          {timeline.map(({ icon: Icon, title, description }) => (
-            <li key={title} className="relative">
+          {timeline.map(({ icon: Icon, title, description }, index) => (
+            <Reveal as="li" key={title} delay={index * 100} className="relative">
               <span className="absolute -left-[31px] flex h-6 w-6 items-center justify-center rounded-full bg-blue-950 border border-blue-800 text-blue-400">
                 <Icon size={14} aria-hidden="true" />
               </span>
               <p className="font-bold text-neutral-100">{title}</p>
               <p className="text-neutral-400 leading-7 mt-1">{description}</p>
-            </li>
+            </Reveal>
           ))}
         </ol>
       </div>
