@@ -42,7 +42,7 @@ export function Hero() {
             </p>
 
             <p className="mt-6 text-lg leading-8 text-neutral-400">
-              Estudiante avanzado de Tecnicatura Universitaria en Informática y estudiante de Licenciatura en Sistemas.
+              Técnico Universitario en Informática recibido, actualmente cursando la Licenciatura en Sistemas.
               Me interesa crecer como Backend Developer Jr., participando en proyectos reales y fortaleciendo
               mis conocimientos en APIs, bases de datos y desarrollo de software.
             </p>
@@ -95,7 +95,7 @@ export function Hero() {
               </p>
               <p className="flex items-center gap-3">
                 <GraduationCap size={18} className="text-blue-400" />
-                Tecnicatura Univ. en Informática: 1 final pendiente
+                Técnico Univ. en Informática | Cursando Lic. en Sistemas
               </p>
               <p className="flex items-center gap-3">
                 <Database size={18} className="text-blue-400" />
