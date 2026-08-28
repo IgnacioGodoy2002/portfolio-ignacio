@@ -20,10 +20,10 @@ export function Hero() {
         <nav className="flex justify-between items-center mb-16">
           <span className="font-bold text-lg text-neutral-100">Portfolio</span>
           <div className="hidden md:flex gap-6 text-sm font-medium text-neutral-300">
-            <a href="#sobre-mi" className="hover:text-blue-400">Sobre mí</a>
-            <a href="#proyectos" className="hover:text-blue-400">Proyectos</a>
-            <a href="#skills" className="hover:text-blue-400">Skills</a>
-            <a href="#contacto" className="hover:text-blue-400">Contacto</a>
+            <a href="#sobre-mi" className="relative py-1 hover:text-blue-400 after:absolute after:left-0 after:right-0 after:-bottom-0.5 after:h-px after:bg-current after:origin-right after:scale-x-0 hover:after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300">Sobre mí</a>
+            <a href="#proyectos" className="relative py-1 hover:text-blue-400 after:absolute after:left-0 after:right-0 after:-bottom-0.5 after:h-px after:bg-current after:origin-right after:scale-x-0 hover:after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300">Proyectos</a>
+            <a href="#skills" className="relative py-1 hover:text-blue-400 after:absolute after:left-0 after:right-0 after:-bottom-0.5 after:h-px after:bg-current after:origin-right after:scale-x-0 hover:after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300">Skills</a>
+            <a href="#contacto" className="relative py-1 hover:text-blue-400 after:absolute after:left-0 after:right-0 after:-bottom-0.5 after:h-px after:bg-current after:origin-right after:scale-x-0 hover:after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300">Contacto</a>
           </div>
         </nav>
 

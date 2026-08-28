@@ -1,4 +1,5 @@
 import { TextureOverlay } from "@/components/ui/texture-overlay";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import { Hero } from "@/components/sections/Hero";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
@@ -16,6 +17,7 @@ function App() {
         Saltar al contenido
       </a>
       <TextureOverlay texture="dots" opacity={0.05} className="invert" />
+      <ScrollProgress />
       <div id="main-content" className="relative z-10">
         <Hero />
         <AboutSection />
