@@ -1,7 +1,7 @@
 import { Briefcase, GraduationCap, Scissors } from "lucide-react";
 import { GradientHeading } from "@/components/ui/gradient-heading";
 import { Reveal } from "@/components/Reveal";
-import avatarFull from "@/assets/avatar-full.svg";
+import avatarFull from "@/assets/avatar-full.jpg";
 
 const timeline = [
   {
@@ -43,9 +43,9 @@ export function AboutSection() {
         <img
           src={avatarFull}
           alt="Ilustración de Ignacio Godoy"
-          className="w-40 md:w-48 mx-auto md:mx-0"
-          width={192}
-          height={272}
+          className="w-40 md:w-48 mx-auto md:mx-0 rounded-2xl border border-neutral-800"
+          width={480}
+          height={642}
         />
 
         <ol className="space-y-6 border-l border-neutral-800 pl-6">
