@@ -26,12 +26,12 @@ export function ProjectCard({ item }) {
       </TextureCardHeader>
 
       <TextureCardContent className="flex-1 flex flex-col">
-        <p className="text-sm leading-7 text-neutral-600 dark:text-neutral-400">
+        <p className="text-sm leading-7 text-neutral-400">
           {item.description}
         </p>
 
         {item.role && (
-          <p className="mt-4 text-sm text-neutral-700 dark:text-neutral-300">
+          <p className="mt-4 text-sm text-neutral-300">
             <strong>Rol:</strong> {item.role}
           </p>
         )}
@@ -40,7 +40,7 @@ export function ProjectCard({ item }) {
           {item.tech.map((tech) => (
             <span
               key={tech}
-              className="bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-full text-xs font-medium"
+              className="bg-neutral-800 text-neutral-300 px-3 py-1 rounded-full text-xs font-medium"
             >
               {tech}
             </span>
