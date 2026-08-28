@@ -43,8 +43,8 @@ const headingVariants = cva("tracking-tight pb-3 bg-clip-text text-transparent",
 })
 
 const GradientHeading = React.forwardRef(
-  ({ asChild, variant, weight, size, className, children, ...props }, ref) => {
-    const Comp = asChild ? Slot : "h3" // default to 'h3' if not a child
+  ({ asChild, as, variant, weight, size, className, children, ...props }, ref) => {
+    const Comp = asChild ? Slot : as ?? "h3" // default to 'h3' if not a child
     return (
       <Comp ref={ref} {...props} className={className}>
         <span className={cn(headingVariants({ variant, size, weight }))}>

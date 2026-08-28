@@ -10,7 +10,7 @@ export function ContactSection() {
         <p className="text-blue-400 font-bold uppercase tracking-widest text-sm">
           Contacto
         </p>
-        <GradientHeading size="lg" className="mt-2 mx-auto w-fit">
+        <GradientHeading as="h2" size="lg" className="mt-2 mx-auto w-fit">
           Hablemos
         </GradientHeading>
         <p className="mt-5 text-neutral-400">

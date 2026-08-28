@@ -45,7 +45,7 @@ export function ProjectsSection() {
       <p className="text-blue-400 font-bold uppercase tracking-widest text-sm">
         Portfolio
       </p>
-      <GradientHeading size="lg" className="mt-2 mb-10">
+      <GradientHeading as="h2" size="lg" className="mt-2 mb-10">
         Proyectos y juegos
       </GradientHeading>
 

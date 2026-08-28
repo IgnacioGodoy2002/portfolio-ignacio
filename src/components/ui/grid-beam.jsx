@@ -172,6 +172,24 @@ function getPreferredColorSchemeSnapshot() {
     : "light";
 }
 
+function subscribePrefersReducedMotion(onChange) {
+  const mq = window.matchMedia("(prefers-reduced-motion: reduce)")
+  mq.addEventListener("change", onChange)
+  return () => mq.removeEventListener("change", onChange);
+}
+
+function getPrefersReducedMotionSnapshot() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches
+}
+
+function usePrefersReducedMotion() {
+  return useSyncExternalStore(
+    subscribePrefersReducedMotion,
+    getPrefersReducedMotionSnapshot,
+    () => false
+  );
+}
+
 function useResolvedColorScheme(theme) {
   const systemScheme = useSyncExternalStore(
     subscribePreferredColorScheme,
@@ -462,10 +480,13 @@ export function useGridBeam(
   const rows = Math.max(2, rowsProp)
   const cols = Math.max(2, colsProp)
 
+  const prefersReducedMotion = usePrefersReducedMotion()
+  const effectiveActive = active && !prefersReducedMotion
+
   const canvasRef = useRef(null)
   const [fadingOut, setFadingOut] = useState(false)
   const [fadeStart, setFadeStart] = useState(null)
-  const prevActive = useRef(active)
+  const prevActive = useRef(effectiveActive)
 
   const resolvedScheme = useResolvedColorScheme(theme)
 
@@ -475,21 +496,21 @@ export function useGridBeam(
   )
 
   useEffect(() => {
-    if (prevActive.current && !active) {
+    if (prevActive.current && !effectiveActive) {
       setFadingOut(true)
       setFadeStart(performance.now())
       const timer = window.setTimeout(() => setFadingOut(false), 700)
-      prevActive.current = active
+      prevActive.current = effectiveActive
       return () => window.clearTimeout(timer);
     }
-    prevActive.current = active
-  }, [active])
+    prevActive.current = effectiveActive
+  }, [effectiveActive])
 
   const configRef = useRef({
     rows,
     cols,
     palette,
-    active,
+    active: effectiveActive,
     fadingOut,
     fadeStart,
     duration,
@@ -500,7 +521,7 @@ export function useGridBeam(
     rows,
     cols,
     palette,
-    active,
+    active: effectiveActive,
     fadingOut,
     fadeStart,
     duration,

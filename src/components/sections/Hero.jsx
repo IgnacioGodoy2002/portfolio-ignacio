@@ -18,8 +18,9 @@ export function Hero() {
     <section className="border-b border-neutral-800">
       <div className="max-w-6xl mx-auto px-6 py-16">
         <nav className="flex justify-between items-center mb-16">
-          <h2 className="font-bold text-lg text-neutral-100">Portfolio</h2>
+          <span className="font-bold text-lg text-neutral-100">Portfolio</span>
           <div className="hidden md:flex gap-6 text-sm font-medium text-neutral-300">
+            <a href="#sobre-mi" className="hover:text-blue-400">Sobre mí</a>
             <a href="#proyectos" className="hover:text-blue-400">Proyectos</a>
             <a href="#skills" className="hover:text-blue-400">Skills</a>
             <a href="#contacto" className="hover:text-blue-400">Contacto</a>
@@ -33,7 +34,7 @@ export function Hero() {
               Buscando primera experiencia IT
             </div>
 
-            <GradientHeading size="xl" className="!pb-0">
+            <GradientHeading as="h1" size="xl" className="!pb-0">
               Hola, soy {profile.name}
             </GradientHeading>
 
@@ -71,7 +72,7 @@ export function Hero() {
                   <p className="text-3xl font-black text-blue-400">
                     <AnimatedNumber value={stat.value} />+
                   </p>
-                  <p className="text-xs text-neutral-500 mt-1">{stat.label}</p>
+                  <p className="text-xs text-neutral-400 mt-1">{stat.label}</p>
                 </div>
               ))}
             </div>

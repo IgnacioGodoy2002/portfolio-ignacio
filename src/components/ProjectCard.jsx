@@ -20,7 +20,16 @@ const LINK_FIELDS = [
 
 export function ProjectCard({ item }) {
   return (
-    <TextureCard className="h-full flex flex-col">
+    <TextureCard className="h-full flex flex-col overflow-hidden">
+      {item.image && (
+        <img
+          src={item.image}
+          alt={`Captura de ${item.title}`}
+          className="w-full h-44 object-cover object-top rounded-t-[20px]"
+          loading="lazy"
+        />
+      )}
+
       <TextureCardHeader className="px-6 pt-6">
         <TextureCardTitle>{item.title}</TextureCardTitle>
       </TextureCardHeader>
