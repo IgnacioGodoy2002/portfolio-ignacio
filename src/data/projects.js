@@ -134,4 +134,37 @@ export const games = [
     role:
       "Reescritura y expansión propia sobre una base de terceros: el clon original en JavaScript vanilla (dannz510/Crossy_road) quedó como código muerto, y reescribí el juego completo en TypeScript sobre Three.js puro (sin motor de juego adicional) con arquitectura orientada a objetos: movimiento en grilla con detección de colisión propia, generación procedural infinita de carriles, vehículos con texturas generadas por canvas, cámara ortográfica con offset manual para la perspectiva isométrica, personaje animado con primitivas propias, sistema de monedas y puntaje, i18n (es/en/pt) y la misma integración con SURA Gaming que en Pengu Rush. Sin deploy público todavía.",
   },
+  {
+    title: "Coin Kingdom",
+    description:
+      "Puzzle de fusión estilo Suika Game: soltás monedas dentro de un frasco y las combinás para subir de tier hasta llegar a la moneda máxima. Juego completo con física real, menú, puntaje/récord persistente, pausa, game over, ranking y 3 idiomas.",
+    tech: [
+      "TypeScript",
+      "Phaser 3",
+      "Matter.js",
+      "Webpack",
+      "i18next",
+      "localStorage",
+    ],
+    role:
+      "Proyecto individual (24 commits, único autor). Diseñé 12 tiers de fusión con reacción en cadena al juntar 3 monedas del tier máximo, dos esquemas de control (tap y lanzador con teclado), y un sistema de tablero fijo con cámara adaptable (\"cover fit\") para encuadrar la física en cualquier viewport. Resolví a mano el renderizado HiDPI que Phaser no soporta nativamente en modo RESIZE (desacoplando el tamaño lógico del backing store del canvas y recalculando el escalado para que el hit-testing de punteros siguiera siendo preciso), calculé colliders circulares a partir del canal alfa real de cada sprite, e implementé i18n con detección de idioma por IP, ranking con medallas dibujadas a mano, PWA básica e integración por postMessage con la plataforma SURA (con modo mock para desarrollo) más CI/CD a GitHub Pages via GitHub Actions.",
+    repo: "https://github.com/IgnacioGodoy2002/Juego-monedas",
+  },
+  {
+    title: "Joystick Pop",
+    description:
+      "Bubble-shooter con temática de botones de control: disparás y unís 3+ bolas del mismo símbolo contra una grilla hexagonal que desciende progresivamente. Responsive (desktop y mobile), pensado para embeberse como minijuego dentro de una plataforma externa vía iframe.",
+    tech: [
+      "TypeScript",
+      "Phaser 3",
+      "Parcel",
+      "RxJS",
+      "jsx-dom",
+      "i18next",
+    ],
+    role:
+      "Proyecto individual (21 commits, único autor). Implementé la detección de matches y bolas huérfanas por flood-fill sobre la grilla hexagonal, ajusté el collider físico de las bolas por debajo del radio visual para que los tiros ajustados se sintieran bien (y resolví el bug de bolas atravesando huecos internos que eso generó con un chequeo de proximidad adicional), separé el escalado por device-pixel-ratio del breakpoint real de CSS para no romper la detección mobile en pantallas de alto DPR, forcé a mano el resize del canvas cuando el navegador mobile colapsa la barra de direcciones (Phaser fija el aspect ratio una sola vez al iniciar), y armé el protocolo propio sobre postMessage con envelope versionado y máquina de estados para reportar sesión y puntaje a la plataforma host SURA.",
+    demo: "https://joystick-pop.vercel.app",
+    repo: "https://github.com/IgnacioGodoy2002/joystick-pop",
+  },
 ];
