@@ -19,10 +19,10 @@ export function FeaturedSection() {
       >
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div>
-            <p className="text-blue-400 font-bold uppercase tracking-widest text-sm">
+            <p className="font-mono text-blue-400 font-bold uppercase tracking-widest text-xs">
               Proyecto fullstack destacado
             </p>
-            <h2 className="text-3xl font-black mt-2">
+            <h2 className="font-mono font-bold uppercase text-3xl mt-3">
               BarberFlow ya está online
             </h2>
             <p className="mt-5 text-neutral-300 leading-8">

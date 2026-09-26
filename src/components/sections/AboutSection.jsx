@@ -1,5 +1,5 @@
 import { Briefcase, GraduationCap, Scissors } from "lucide-react";
-import { GradientHeading } from "@/components/ui/gradient-heading";
+import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
 import avatarFull from "@/assets/avatar-full.jpg";
 
@@ -32,12 +32,13 @@ const timeline = [
 export function AboutSection() {
   return (
     <section id="sobre-mi" className="max-w-6xl mx-auto px-6 py-16">
-      <p className="text-blue-400 font-bold uppercase tracking-widest text-sm">
-        Sobre mí
-      </p>
-      <GradientHeading as="h2" size="lg" className="mt-2 mb-10">
+      <SectionHeading eyebrow="Sobre mí" className="mb-12">
         Mi camino
-      </GradientHeading>
+      </SectionHeading>
+
+      <Reveal as="p" className="text-2xl md:text-3xl leading-snug text-neutral-200 max-w-[38ch] mb-16">
+        Convertí años de trato directo con clientes en la disciplina de escribir software que la gente realmente usa.
+      </Reveal>
 
       <div className="grid md:grid-cols-[auto_1fr] gap-10 items-start">
         <img
@@ -54,15 +55,15 @@ export function AboutSection() {
               <span className="absolute -left-[31px] flex h-6 w-6 items-center justify-center rounded-full bg-blue-950 border border-blue-800 text-blue-400">
                 <Icon size={14} aria-hidden="true" />
               </span>
-              <p className="font-bold text-neutral-100">{title}</p>
+              <p className="font-mono font-bold uppercase text-sm tracking-wide text-neutral-100">{title}</p>
               <p className="text-neutral-400 leading-7 mt-1">{description}</p>
             </Reveal>
           ))}
         </ol>
       </div>
 
-      <div className="mt-12 rounded-2xl border border-neutral-800 bg-neutral-900/50 p-6">
-        <p className="text-sm text-neutral-400 mb-3">Actividad en GitHub</p>
+      <div className="mt-12 border border-neutral-800 bg-neutral-900/50 p-6">
+        <p className="font-mono text-xs uppercase tracking-widest text-neutral-400 mb-3">Actividad en GitHub</p>
         <div className="rounded-xl bg-neutral-100 p-4 overflow-x-auto">
           <img
             src="https://ghchart.rshah.org/2563eb/IgnacioGodoy2002"
