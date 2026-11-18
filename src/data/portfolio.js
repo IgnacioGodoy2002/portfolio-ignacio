@@ -89,7 +89,7 @@ export const gameProjects = [
     tech: ['JavaScript', 'Vite', 'Canvas', 'i18n', 'postMessage'], type: 'Minijuego · Evolución de Pengu Rush',
     color: '#bdb0ff', art: 'space',
     screens: [{src: './capturas/cosmo-menu-20261118.jpg', label: 'Selección de piloto · ranking de ejemplo (fuera de la app)', tall: true}, {src: './capturas/cosmo-partida-20261118.jpg', label: 'Partida en escritorio'}],
-    links: [{label: 'Ver código', href: 'https://github.com/IgnacioGodoy2002/cosmo-rush', kind: 'code'}, {label: 'Pengu Rush original', href: 'https://pengu-rush.vercel.app', kind: 'demo'}],
+    links: [{label: 'Jugar Cosmo Rush', href: 'https://cosmo-rush.vercel.app', kind: 'demo'}, {label: 'Ver código', href: 'https://github.com/IgnacioGodoy2002/cosmo-rush', kind: 'code'}, {label: 'Pengu Rush original', href: 'https://pengu-rush.vercel.app', kind: 'demo'}],
   },
   {
     id: 'coin', title: 'Coin Kingdom', category: 'Puzzle de monedas', genre: 'Puzzle',
@@ -102,7 +102,7 @@ export const gameProjects = [
     tech: ['TypeScript', 'Phaser', 'Matter.js', 'i18next'], type: 'Minijuego en evolución',
     color: '#f3ca74', monogram: 'CK', art: 'coins',
     screens: [{src: './capturas/coin-menu-20261118.jpg', label: 'Menú y personajes', tall: true}, {src: './capturas/coin-partida-20261118.jpg', label: 'Partida en el frasco', tall: true}],
-    links: [{label: 'Ver código', href: 'https://github.com/IgnacioGodoy2002/Juego-monedas', kind: 'code'}],
+    links: [{label: 'Jugar Coin Kingdom', href: 'https://juego-monedas.vercel.app', kind: 'demo'}, {label: 'Ver código', href: 'https://github.com/IgnacioGodoy2002/Juego-monedas', kind: 'code'}],
   },
   {
     id: 'joystick', title: 'Joystick Pop', category: 'Bubble shooter', genre: 'Puzzle',
@@ -115,7 +115,7 @@ export const gameProjects = [
     tech: ['TypeScript', 'Phaser', 'Parcel', 'Playwright', 'i18next'], type: 'Minijuego integrado',
     color: '#dd9ef4', art: 'pop',
     screens: [{src: './capturas/joystick-menu-20261118.jpg', label: 'Selección de personaje', tall: true}, {src: './capturas/joystick-partida-20261118.jpg', label: 'Partida en móvil', tall: true}],
-    links: [{label: 'Ver código', href: 'https://github.com/IgnacioGodoy2002/joystick-pop', kind: 'code'}],
+    links: [{label: 'Jugar Joystick Pop', href: 'https://joystick-pop.vercel.app', kind: 'demo'}, {label: 'Ver código', href: 'https://github.com/IgnacioGodoy2002/joystick-pop', kind: 'code'}],
   },
   {
     id: 'safari', title: 'Safari Crossing', category: 'Cruces y supervivencia', genre: 'Arcade',
@@ -126,7 +126,7 @@ export const gameProjects = [
     contribution: 'Reescritura de una base de terceros en TypeScript y Three.js. Puente de comunicación con dos transportes (iframe y WebView), handshake con reintentos, ranking que distingue datos remotos y locales, encuadre de cámara fijo y menú que entra en una sola pantalla.',
     highlights: ['Fix en la app nativa: los mensajes del juego nunca llegaban al host, por lo que no cargaba el ranking ni se acreditaban puntos.', 'Handshake con reintentos (~7 s) y aviso visible si SURA no responde en 10 s.', 'El ranking ya no muestra récords locales como si fueran globales.', 'Cámara con porción fija del mundo y menú escalado para entrar sin scroll.'],
     tech: ['TypeScript', 'Three.js', 'Vite', 'postMessage', 'React Native WebView'], type: 'Reescritura y expansión',
-    color: '#a7d6a1', monogram: 'SC', art: 'safari', links: [{label: 'Ver código', href: 'https://github.com/IgnacioGodoy2002/safari-crossing', kind: 'code'}],
+    color: '#a7d6a1', monogram: 'SC', art: 'safari', links: [{label: 'Jugar Safari Crossing', href: 'https://safari-crossing.vercel.app', kind: 'demo'}, {label: 'Ver código', href: 'https://github.com/IgnacioGodoy2002/safari-crossing', kind: 'code'}],
     screens: [{src: './capturas/safari-menu-20261118.jpg', label: 'Menú en escritorio'}, {src: './capturas/safari-partida-20261118.jpg', label: 'Partida en móvil horizontal'}],
     note: 'Desarrollado a partir de una base de terceros, con reescritura y ampliaciones propias.',
   },
@@ -139,7 +139,7 @@ export const gameProjects = [
     contribution: 'Personajes 3D, animaciones, power-ups, HUD de velocidad, menú y dificultad. Capa de integración con SURA: handshake, sesión, sincronización de récord, pausa, reanudación, ranking y reporte de partidas.',
     highlights: ['Power-ups de imán, escudo y puntos dobles.', 'HUD con puntaje, distancia, monedas y velocidad.', 'Top 3 en el menú y ranking completo.', 'Cuatro personajes 3D: Tucán, Capibara, Mapache y Suri.'],
     tech: ['JavaScript', 'Three.js', 'Módulos ES', 'postMessage'], type: 'Minijuego e integración de plataforma',
-    color: '#82d9d9', monogram: 'PR', art: 'playa', links: [{label: 'Ver código', href: 'https://github.com/IgnacioGodoy2002/playa-run', kind: 'code'}],
+    color: '#82d9d9', monogram: 'PR', art: 'playa', links: [{label: 'Jugar Playa Run', href: 'https://playa-run.vercel.app', kind: 'demo'}, {label: 'Ver código', href: 'https://github.com/IgnacioGodoy2002/playa-run', kind: 'code'}],
     screens: [{src: './capturas/playa-menu-20261118.jpg', label: 'Menú en escritorio'}, {src: './capturas/playa-partida-20261118.jpg', label: 'Partida en móvil', tall: true}],
   },
   {
