@@ -45,7 +45,7 @@ y enlaces. Este ZIP contiene el portfolio, no los proyectos fuente
 independientes de los ocho juegos.
 
 VISTA WEB
-https://ignacio-godoy-portfolio.product34.chatgpt.site
+https://portfolio-ignacio-pi.vercel.app
 
 Exportación: 18 de noviembre de 2026 (Experiencia en SURA GG Corp, panel Anti-cheat, foto de perfil, nueva imagen para compartir, secciones reordenadas, capturas y links de código de Cosmo Rush 1.0.1, Coin Kingdom 0.1.7, Joystick Pop 1.4.3, Safari Crossing 1.3.3 y Playa Run 1.3.4).
 Versión de origen: 5.
