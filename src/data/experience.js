@@ -8,7 +8,7 @@ export const experience = {
   metrics: [
     { value: '8', label: 'minijuegos desarrollados o iterados' },
     { value: '5', label: 'juegos con recompensas integradas' },
-    { value: '800', label: 'tiros auditados sin errores en Joystick Pop' },
+    { value: '2', label: 'plataformas: web y app nativa de SURA' },
   ],
   stack: ['TypeScript', 'JavaScript', 'Phaser', 'Three.js', 'NestJS', 'TypeORM', 'postMessage', 'Snag', 'Playwright'],
   areas: [
