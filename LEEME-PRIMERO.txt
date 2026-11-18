@@ -1,0 +1,51 @@
+PORTFOLIO DE IGNACIO GODOY
+=========================
+
+Este ZIP contiene la última versión del portfolio, con las ocho portadas
+originales de los juegos, los proyectos de software y los casos de SURA,
+Snag y The Rewards Ledger.
+
+1. DESCOMPRIMIR
+Extraé el ZIP completo antes de abrir o editar sus archivos.
+
+2. ABRIR Y EDITAR EL PROYECTO
+Requisito: Node.js 22.12 o superior, con npm.
+Abrí una terminal en esta carpeta y ejecutá:
+
+    npm ci
+    npm run dev
+
+Abrí en el navegador la dirección local que indique la terminal.
+Dejá la terminal abierta mientras usás la vista previa.
+
+3. GENERAR UNA NUEVA VERSIÓN PARA PUBLICAR
+Después de hacer cambios, ejecutá:
+
+    npm run build
+
+La web lista para publicar queda en la carpeta dist/.
+Para revisar esa versión localmente:
+
+    npm run preview
+
+4. CONTENIDO DEL ZIP
+- src/: código React, estilos, datos y componentes.
+- public/: ocho portadas, capturas, CV, guía y video de Frozen Lácteos.
+- dist/: versión compilada lista para un alojamiento de archivos estáticos.
+- docs/: documento de referencia de The Rewards Ledger.
+- package.json y package-lock.json: dependencias y comandos del proyecto.
+- README.md: documentación del portfolio.
+
+La carpeta node_modules no se incluye; npm ci instala las dependencias.
+Para visualizar la web, usá un servidor local o un alojamiento estático.
+Abrir index.html con doble clic no ejecuta correctamente esta aplicación.
+
+Los juegos se presentan en el portfolio mediante sus fichas, imágenes
+y enlaces. Este ZIP contiene el portfolio, no los proyectos fuente
+independientes de los ocho juegos.
+
+VISTA WEB
+https://ignacio-godoy-portfolio.product34.chatgpt.site
+
+Exportación: 18 de noviembre de 2026 (Experiencia en SURA GG Corp, panel Anti-cheat, foto de perfil, nueva imagen para compartir, secciones reordenadas, capturas y links de código de Cosmo Rush 1.0.1, Coin Kingdom 0.1.7, Joystick Pop 1.4.3, Safari Crossing 1.3.3 y Playa Run 1.3.4).
+Versión de origen: 5.

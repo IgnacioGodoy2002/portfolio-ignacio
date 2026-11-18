@@ -1,7 +1,7 @@
 import { Briefcase, GraduationCap, Scissors } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
-import avatarFull from "@/assets/avatar-full.jpg";
+import avatarFull from "@/assets/foto-ignacio.jpg";
 
 const timeline = [
   {

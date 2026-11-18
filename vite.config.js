@@ -7,6 +7,8 @@ import { fileURLToPath } from 'url'
 const dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
+  server: { host: "0.0.0.0", allowedHosts: ["terminal.local"] },
+  base: './',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {

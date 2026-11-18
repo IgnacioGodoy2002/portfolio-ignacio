@@ -5,7 +5,7 @@ export const profile = {
   email: "nachogodoy04@gmail.com",
   linkedin: "https://www.linkedin.com/in/ignacio-gabriel-godoy-351770273/",
   github: "https://github.com/IgnacioGodoy2002",
-  cv: "/CV_Ignacio_Godoy.pdf",
+  cv: "./CV_Ignacio_Godoy.pdf",
 };
 
 export const skills = [
