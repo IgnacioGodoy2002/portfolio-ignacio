@@ -19,10 +19,9 @@ export const rewardsProject = {
   ],
   tech: ['JavaScript', 'Módulos ES', 'postMessage', 'Snag', 'TypeORM', 'Phaser', 'Pruebas E2E'],
   metrics: [
-    { value: '5', label: 'juegos abordados' },
-    { value: '3', label: 'repositorios intervenidos' },
-    { value: '2', label: 'modalidades de recompensa' },
-    { value: '1', label: 'falso positivo corregido' },
+    { value: '5', label: 'juegos conectados a SURA Points' },
+    { value: '2', label: 'tipos de premio: diario y por récord' },
+    { value: '1', label: 'bug del anti-cheat corregido' },
   ],
   snapshotStatus: 'Estado al documentar el caso: Cosmo Rush ya contaba con integración en producción. Los cambios de Joystick Pop, Safari Crossing, Coin Kingdom y Playa Run figuraban con solicitudes de cambio (PR) abiertas.',
   contract: [

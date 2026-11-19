@@ -164,3 +164,8 @@
 .game-action--play{background:var(--accent);border-color:var(--accent);color:#11140f}
 .game-action--play:hover{background:#d3f59b;border-color:#d3f59b}
 .game-action:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* ===== Rewards Ledger: tres métricas en una fila ===== */
+.ledger-metrics{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:20px 18px}
+.ledger-metrics dt{max-width:none}
+@media(max-width:700px){.ledger-metrics{gap:16px 12px}.ledger-metrics dd{font-size:2.125rem}.ledger-metrics dt{font-size:.75rem}}
