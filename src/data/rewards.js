@@ -24,16 +24,16 @@ export const rewardsProject = {
     { value: '2', label: 'modalidades de recompensa' },
     { value: '1', label: 'falso positivo corregido' },
   ],
-  snapshotStatus: 'Estado al documentar el caso: Pengu Rush ya contaba con integración en producción. Los cambios de Joystick Pop, Safari Crossing, Coin Kingdom y Playa Run figuraban con solicitudes de cambio (PR) abiertas.',
+  snapshotStatus: 'Estado al documentar el caso: Cosmo Rush ya contaba con integración en producción. Los cambios de Joystick Pop, Safari Crossing, Coin Kingdom y Playa Run figuraban con solicitudes de cambio (PR) abiertas.',
   contract: [
-    { label: 'INIT_GAME', title: 'Contexto de la cuenta', text: 'La plataforma entrega sesión, token, nombre de jugador, idioma de cuenta y récord real. En Pengu Rush se conserva la elección manual de idioma realizada dentro del juego.' },
+    { label: 'INIT_GAME', title: 'Contexto de la cuenta', text: 'La plataforma entrega sesión, token, nombre de jugador, idioma de cuenta y récord real. En Cosmo Rush se conserva la elección manual de idioma realizada dentro del juego.' },
     { label: 'GAME_COMPLETE', title: 'Resultado verificable', text: 'El juego informa puntaje y duración real. El servidor toma la menor duración entre su propio reloj y la reportada por el cliente.' },
     { label: 'REGLA DIARIA', title: 'Participación con un mínimo', text: 'Una cantidad fija de SP una vez por día, al superar el umbral de puntaje definido en la regla de Snag.' },
     { label: 'REGLA POR PUNTAJE', title: 'Mejora del récord personal', text: 'SP por nuevos tramos alcanzados por encima del mejor resultado previo. Repetir un puntaje ya superado no vuelve a generar esta recompensa.' },
   ],
   engineeringCases: [
     {
-      game: 'Pengu Rush', status: 'En producción al documentar el caso',
+      game: 'Cosmo Rush', status: 'En producción al documentar el caso',
       title: 'Una base existente, mejoras en la experiencia',
       problem: 'La integración de recompensas y su curva de validación ya funcionaban. Persistían desajustes de idioma de cuenta y récord, además de un fallo del botón de inicio al terminar una partida.',
       solution: 'Propagación del idioma mediante INIT_GAME respetando la selección manual, actualización del récord y corrección del inicio de nuevas partidas. La curva existente, basada en la simulación del juego, se utilizó como referencia para los demás casos.',
@@ -74,7 +74,7 @@ export const rewardsProject = {
 
 export const gameRewardsNotes = {
   cosmo: {
-    label: 'Integración de Pengu Rush',
+    label: 'Integración de Cosmo Rush',
     text: 'The Rewards Ledger documenta en la versión de origen la sincronización del idioma de cuenta y del récord, la corrección del inicio de nuevas partidas y la reducción de la compilación de 19,3 a 11,4 MB.',
     status: 'La integración base ya estaba en producción al documentar el caso.',
   },
