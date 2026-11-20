@@ -6,52 +6,86 @@ const prefersReducedMotion = () =>
 const hasFinePointer = () =>
   typeof window !== 'undefined' && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-const INTERACTIVE = 'a, button, [role="tab"], summary, label, select, .game-cover-button';
+const INTERACTIVE = 'a, button, [role="tab"], summary, label, select';
 const TEXT_INPUT = 'input, textarea, [contenteditable="true"]';
+const MAGNETIC = '.button, .game-action, .desktop-nav a, .header-contact, .contact-main-button, .text-button, .eco-tabs [role="tab"]';
+
+/** Etiqueta que muestra el cursor según dónde está. */
+function labelFor(target) {
+  if (target.closest('.game-action--play')) return 'Jugar';
+  if (target.closest('.game-cover-button, .hero-project--cover, .product-card [data-cursor="ver"]')) return 'Ver';
+  const own = target.closest('[data-cursor-label]');
+  return own ? own.getAttribute('data-cursor-label') : '';
+}
 
 /**
- * Cursor animado: un punto que sigue al mouse al instante y un anillo que lo
- * persigue con inercia. Sobre links y botones el anillo crece y se rellena;
- * sobre las portadas de los juegos muestra "Ver". Solo se activa con mouse
- * (no en pantallas táctiles) y nunca con "reducir movimiento" activado.
+ * Cursor profesional: un círculo que invierte los colores de lo que tiene
+ * debajo (mix-blend-mode: difference), sigue al mouse con un resorte suave y
+ * se estira en la dirección del movimiento según la velocidad. Sobre links y
+ * botones crece; sobre portadas y "Jugar" se vuelve un disco con etiqueta.
+ * Los botones principales se acercan levemente al cursor (efecto magnético).
+ * Solo con mouse; nunca en táctil ni con "reducir movimiento".
  */
 export function CustomCursor() {
-  const dotRef = useRef(null);
-  const ringRef = useRef(null);
+  const shellRef = useRef(null);
+  const blobRef = useRef(null);
   const labelRef = useRef(null);
 
   useEffect(() => {
     if (!hasFinePointer() || prefersReducedMotion()) return undefined;
-    const dot = dotRef.current;
-    const ring = ringRef.current;
+    const shell = shellRef.current;
+    const blob = blobRef.current;
     const label = labelRef.current;
     const root = document.documentElement;
     root.classList.add('has-custom-cursor');
 
-    let mouseX = -100, mouseY = -100, ringX = -100, ringY = -100, frame = 0, visible = false;
+    let mx = -200, my = -200, x = -200, y = -200, vx = 0, vy = 0;
+    let frame = 0, visible = false, magnet = null;
 
     const render = () => {
-      ringX += (mouseX - ringX) * 0.18;
-      ringY += (mouseY - ringY) * 0.18;
-      dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
-      ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
+      // Resorte amortiguado: rápido pero sin sobrepasarse demasiado.
+      const ax = (mx - x) * 0.22, ay = (my - y) * 0.22;
+      vx = (vx + ax) * 0.62; vy = (vy + ay) * 0.62;
+      x += vx; y += vy;
+      const speed = Math.min(Math.hypot(vx, vy), 40);
+      const stretch = 1 + speed / 70;
+      const angle = Math.atan2(vy, vx) * 180 / Math.PI;
+      shell.style.transform = `translate3d(${x}px, ${y}px, 0) rotate(${angle}deg) scale(${stretch}, ${1 / stretch})`;
+      label.style.transform = `rotate(${-angle}deg)`;
       frame = requestAnimationFrame(render);
     };
 
-    const onMove = event => {
-      mouseX = event.clientX;
-      mouseY = event.clientY;
-      if (!visible) { visible = true; ringX = mouseX; ringY = mouseY; root.classList.add('cursor-visible'); }
-      const target = event.target instanceof Element ? event.target : null;
-      const overText = target?.closest(TEXT_INPUT);
-      const interactive = !overText && target?.closest(INTERACTIVE);
-      const cover = target?.closest('.game-cover-button, .hero-project--cover');
-      root.classList.toggle('cursor-hover', Boolean(interactive));
-      root.classList.toggle('cursor-text', Boolean(overText));
-      root.classList.toggle('cursor-view', Boolean(cover));
-      label.textContent = cover ? 'Ver' : '';
+    const release = () => {
+      if (!magnet) return;
+      magnet.style.transform = '';
+      magnet.classList.remove('is-magnetized');
+      magnet = null;
     };
-    const onLeave = () => { visible = false; root.classList.remove('cursor-visible'); };
+
+    const onMove = event => {
+      mx = event.clientX; my = event.clientY;
+      if (!visible) { visible = true; x = mx; y = my; root.classList.add('cursor-visible'); }
+      const target = event.target instanceof Element ? event.target : null;
+      if (!target) return;
+      const overText = target.closest(TEXT_INPUT);
+      const text = overText ? '' : labelFor(target);
+      const interactive = !overText && target.closest(INTERACTIVE);
+      root.classList.toggle('cursor-text', Boolean(overText));
+      root.classList.toggle('cursor-hover', Boolean(interactive) && !text);
+      root.classList.toggle('cursor-label', Boolean(text));
+      if (label.textContent !== text) label.textContent = text;
+
+      const m = overText ? null : target.closest(MAGNETIC);
+      if (m !== magnet) release();
+      if (m) {
+        magnet = m; m.classList.add('is-magnetized');
+        const r = m.getBoundingClientRect();
+        const dx = (mx - (r.left + r.width / 2)) * 0.18;
+        const dy = (my - (r.top + r.height / 2)) * 0.28;
+        m.style.transform = `translate(${Math.max(-8, Math.min(8, dx))}px, ${Math.max(-6, Math.min(6, dy))}px)`;
+      }
+    };
+    const onLeave = () => { visible = false; root.classList.remove('cursor-visible'); release(); };
     const onDown = () => root.classList.add('cursor-down');
     const onUp = () => root.classList.remove('cursor-down');
 
@@ -59,22 +93,27 @@ export function CustomCursor() {
     document.addEventListener('pointerleave', onLeave);
     window.addEventListener('pointerdown', onDown);
     window.addEventListener('pointerup', onUp);
+    window.addEventListener('blur', onLeave);
     frame = requestAnimationFrame(render);
 
     return () => {
       cancelAnimationFrame(frame);
+      release();
       window.removeEventListener('pointermove', onMove);
       document.removeEventListener('pointerleave', onLeave);
       window.removeEventListener('pointerdown', onDown);
       window.removeEventListener('pointerup', onUp);
-      root.classList.remove('has-custom-cursor', 'cursor-visible', 'cursor-hover', 'cursor-text', 'cursor-view', 'cursor-down');
+      window.removeEventListener('blur', onLeave);
+      root.classList.remove('has-custom-cursor', 'cursor-visible', 'cursor-hover', 'cursor-text', 'cursor-label', 'cursor-down');
     };
   }, []);
 
   return (
     <div className="cursor-layer" aria-hidden="true">
-      <div ref={ringRef} className="cursor-ring"><span ref={labelRef} className="cursor-label" /></div>
-      <div ref={dotRef} className="cursor-dot" />
+      <div ref={shellRef} className="cursor-shell">
+        <div ref={blobRef} className="cursor-blob" />
+        <span ref={labelRef} className="cursor-text-label" />
+      </div>
     </div>
   );
 }
