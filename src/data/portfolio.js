@@ -7,11 +7,18 @@ import { gameCovers } from './gameCovers';
 const softwareCopy = [
   {
     id: 'barberflow', title: 'BarberFlow', category: 'Producto fullstack',
-    summary: 'Aplicación fullstack para reservas y gestión de turnos de barbería.',
-    description: 'Aplicación de reservas para barberías con consulta de servicios, profesionales y disponibilidad, gestión de turnos y administración interna.',
-    challenge: 'Llevar la organización diaria de una barbería a una experiencia de reserva clara, con disponibilidad consistente y distintos permisos de acceso.',
-    contribution: 'Diseño y desarrollo de la interfaz, la API y la base de datos, incluyendo autenticación, permisos por rol y despliegue. El proyecto aplica mi experiencia en barbería a la resolución de necesidades operativas del sector.',
-    highlights: ['Reservas, cancelaciones y consulta de turnos propios.', 'Disponibilidad dinámica y panel de administración.', 'Autenticación JWT y permisos por rol.'],
+    summary: 'Sistema de turnos online para una barbería real: reservas con seña, reprogramación, lista de espera y panel de administración.',
+    description: 'Sistema de turnos para Nacho Barbershop, la barbería donde trabajo. Los clientes ven servicios y horarios libres en tiempo real, reservan con seña por Mercado Pago, reprograman o cancelan, y reciben recordatorios por email. El dueño administra todo desde un panel con calendario, métricas y lista de espera.',
+    challenge: 'Reemplazar la agenda por WhatsApp sin perder control: que nunca haya dos turnos en el mismo horario, que los que no vienen no bloqueen la agenda y que el sistema funcione aunque el servidor gratuito se duerma.',
+    contribution: 'Lo diseñé y desarrollé completo: interfaz en React, API REST en NestJS con 44 endpoints, modelo de datos en PostgreSQL con Prisma, autenticación JWT con roles, integración de pagos con webhooks, tareas programadas, tests automáticos, CI y despliegue en Vercel y Render.',
+    highlights: [
+      'Sin doble reserva aunque varios clientes confirmen el mismo horario al mismo tiempo (lock en PostgreSQL, probado con un test de 8 reservas simultáneas).',
+      'Seña con Mercado Pago: el turno queda pendiente y se confirma solo cuando el webhook firmado avisa el pago; si no se paga, se libera.',
+      'Reprogramación y cancelación desde la web, con lista de espera que avisa por email cuando se libera un horario.',
+      'Recordatorio automático por email 24 h antes del turno.',
+      'Panel admin con modo demo: cualquiera puede recorrerlo en solo lectura y con los datos de los clientes ocultos.',
+      '33 tests (unitarios y de punta a punta con PostgreSQL real) corriendo en GitHub Actions en cada cambio.',
+    ],
     type: 'Proyecto personal', color: '#9cbafa',
   },
   {
@@ -66,6 +73,7 @@ export const softwareProjects = originalProjects.map((project, i) => ({
   ...project, ...softwareCopy[i], kind: 'software',
   links: [
     project.demo && { label: 'Abrir demo', href: project.demo, kind: 'demo' },
+    project.adminDemo && { label: 'Probar panel admin', href: project.adminDemo, kind: 'demo' },
     project.frontend && { label: 'Frontend', href: project.frontend, kind: 'code' },
     project.backend && { label: 'Backend', href: project.backend, kind: 'code' },
     project.repo && { label: project.buttonText || 'Ver código', href: project.repo, kind: 'code' },

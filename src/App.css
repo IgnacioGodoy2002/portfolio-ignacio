@@ -237,3 +237,34 @@
   .game-card:hover,.product-card:hover,.exp-areas>li:hover{transform:none!important}
 }
 .availability-dot{display:inline-block;width:7px;height:7px;background:var(--accent);flex-shrink:0}
+
+/* ---------- Caso de estudio BarberFlow ---------- */
+.bf-case{display:grid;gap:34px;margin:30px 0 34px}
+.bf-block>h3{display:flex;align-items:center;gap:8px;font-size:1.125rem;font-weight:560;margin-bottom:16px}
+.bf-numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.bf-numbers>div{border:1px solid var(--line);border-radius:10px;padding:16px;background:#12171a;display:flex;flex-direction:column;gap:6px}
+.bf-numbers strong{font-size:1.75rem;font-weight:620;letter-spacing:-.03em;color:var(--accent)}
+.bf-numbers span{font-size:.8125rem;color:var(--muted);line-height:1.45}
+.bf-arch{display:flex;align-items:stretch;gap:0}
+.bf-arch-node{display:flex;align-items:center;flex:1;min-width:0}
+.bf-arch-card{flex:1;border:1px solid #3b4550;border-radius:10px;padding:16px;background:linear-gradient(180deg,#18202a,#12171c);display:flex;flex-direction:column;gap:6px;min-height:132px}
+.bf-arch-card svg{color:#9cbafa}
+.bf-arch-card strong{font-weight:580}
+.bf-arch-card span{font-size:.8125rem;color:#b3bcc4;line-height:1.45}
+.bf-arch-card em{margin-top:auto;font-style:normal;font-family:var(--mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.bf-arch-arrow{width:34px;flex-shrink:0;height:2px;background:linear-gradient(90deg,#3b4550,var(--accent));position:relative}
+.bf-arch-arrow::after{content:'';position:absolute;right:-1px;top:-4px;border:5px solid transparent;border-left:7px solid var(--accent)}
+.bf-services{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.bf-services li{display:flex;align-items:center;gap:8px;font-size:.8125rem;color:var(--muted);border:1px dashed #3a4248;border-radius:8px;padding:10px 12px}
+.bf-services svg{color:var(--accent);flex-shrink:0}
+.bf-services b{color:var(--text);font-weight:560}
+.bf-decisions{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.bf-decisions li{display:grid;grid-template-columns:22px 1fr;gap:14px;border:1px solid var(--line);border-radius:10px;padding:16px 18px;background:#12171a}
+.bf-decisions svg{color:var(--accent);margin-top:2px}
+.bf-decisions p{font-size:.9375rem;line-height:1.65;color:#c3cad0}
+.bf-decisions .bf-problem{color:var(--text);font-weight:560;margin-bottom:6px}
+.bf-screens{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.bf-screens figure{margin:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#0d1114}
+.bf-screens img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
+.bf-screens figcaption{font-size:.75rem;color:var(--muted);padding:10px 12px;font-family:var(--mono)}
+@media(max-width:700px){.bf-numbers{grid-template-columns:repeat(2,1fr)}.bf-arch{flex-direction:column}.bf-arch-node{flex-direction:column;width:100%}.bf-arch-card{width:100%;min-height:0}.bf-arch-arrow{width:2px;height:22px;background:linear-gradient(180deg,#3b4550,var(--accent))}.bf-arch-arrow::after{right:-4px;top:auto;bottom:-6px;border:5px solid transparent;border-top:7px solid var(--accent)}.bf-services,.bf-screens{grid-template-columns:1fr}}

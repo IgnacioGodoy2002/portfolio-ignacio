@@ -6,6 +6,7 @@ import { profile } from './data/profile';
 import { expertise, gameProjects, softwareProjects } from './data/portfolio';
 import { rewardsProject } from './data/rewards';
 import { RewardsDetails, RewardsFeature } from './components/RewardsCase';
+import { BarberFlowCaseStudy } from './components/BarberFlowCaseStudy';
 import avatar from './assets/foto-ignacio.jpg';
 import './App.css';
 
@@ -41,7 +42,8 @@ function CaseModal({ project, onClose }) {
       {project.engineeringCases && <RewardsDetails project={project} />}
       <TagList items={project.tech} />
       {project.rewardIntegration && <section className="case-rewards-note" aria-label="Trabajo de integración y recompensas"><span className="small-kicker">THE REWARDS LEDGER</span><h3>{project.rewardIntegration.label}</h3><p>{project.rewardIntegration.text}</p><span className="case-rewards-status">{project.rewardIntegration.status}</span></section>}
-      {project.video && <div className="case-video"><h3>Demostración del sistema</h3><video controls preload="none" poster={project.image}><source src={project.video} type="video/mp4" />Tu navegador no puede reproducir este video. <a href={project.video}>Descargar video</a></video></div>}
+      {project.id === 'barberflow' && <BarberFlowCaseStudy />}
+      {project.video && <div className="case-video"><h3>Demostración del sistema</h3><video controls preload="none" poster={project.poster || project.image}><source src={project.video} type="video/mp4" />Tu navegador no puede reproducir este video. <a href={project.video}>Descargar video</a></video></div>}
       {project.note && <p className="case-note">{project.note}</p>}
       {project.links.some(link => link.restricted) && <p className="case-access-note">La versión de desarrollo requiere acceso autorizado al proyecto.</p>}
       {project.links.length > 0 && <div className="case-links">{project.links.map((link, i) => <a key={link.href} className={`button ${i === 0 ? 'button-primary' : 'button-outline'}`} href={link.href} target="_blank" rel="noopener noreferrer"><LinkIcon kind={link.kind} />{link.label}</a>)}</div>}
